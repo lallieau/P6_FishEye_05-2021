@@ -5,10 +5,7 @@
     <title>FishEye</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
     <header>
@@ -27,23 +24,24 @@
     </header>
     <main>
       <h1>Nos photographes</h1>
-      <article>
-        <a href="" aria-label="Mimi Keel">
-          <img src="" alt="" />
-          <h2>Mimi Keel</h2>
+      <article class="photographer">
+        <a href="" aria-label="" class="photographer__link">
+          <img class="photographer__link__portrait" src="" alt="" />
+          <h2 class="photographer__link__name"></h2>
         </a>
-        <div>
-          <p>London, UK</p>
-          <p>Voir le beau dans le quotidien</p>
-          <p>400€/jour</p>
+        <div class="photographer__details">
+          <p class="photographer__details__location"></p>
+          <p class="photographer__details__tagline"></p>
+          <p class="photographer__details__price"></p>
         </div>
-        <div>
-          <span>#Portrait</span>
-          <span>#Animals</span>
-          <span>#Events</span>
-          <span>#Travel</span>
+        <div class="photographer__tags">
+          <span class="photographer__tags__tag"></span>
+          <span class="photographer__tags__tag"></span>
+          <span class="photographer__tags__tag"></span>
+          <span class="photographer__tags__tag"></span>
         </div>
       </article>
     </main>
+    <script src="../readjson.js"></script>
   </body>
 </html>
