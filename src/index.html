@@ -4,7 +4,12 @@
     <meta charset="utf-8" />
     <title>FishEye</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./components/thumb-photographer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
@@ -24,23 +29,7 @@
     </header>
     <main>
       <h1>Nos photographes</h1>
-      <article class="photographer">
-        <a href="" aria-label="" class="photographer__link">
-          <img class="photographer__link__portrait" src="" alt="" />
-          <h2 class="photographer__link__name"></h2>
-        </a>
-        <div class="photographer__details">
-          <p class="photographer__details__location"></p>
-          <p class="photographer__details__tagline"></p>
-          <p class="photographer__details__price"></p>
-        </div>
-        <div class="photographer__tags">
-          <span class="photographer__tags__tag"></span>
-          <span class="photographer__tags__tag"></span>
-          <span class="photographer__tags__tag"></span>
-          <span class="photographer__tags__tag"></span>
-        </div>
-      </article>
+      <div id="photographers"></div>
     </main>
     <script src="../readjson.js"></script>
   </body>

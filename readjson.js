@@ -1,57 +1,50 @@
-//let data = fetch('./src/data.json').then(response => response.json().then(console.log));
+// https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P5+Javascript+%26+Accessibility/FishEyeData.json
 
-//console.log(data);
-
-/*
-
-const getPhotographer = async function () {
-  try {
-    let response = await fetch('./src/data.json');
-    if (response.ok) {
-      let data = await response.json();
-      console.log(data.photographers);
-    } else {
-      console.error('Retour du serveur : ', response.status);
-    }
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-*/
-// Récupérer les données des photographes
+const template = photographer => `
+  <article class="photographer">
+    <a href="" aria-label="" class="photographer__link">
+      <img class="photographer__link__portrait" src="./public/assets/Photographers/${photographer.portrait}" alt="" />
+      <h2 class="photographer__link__name">${photographer.name}</h2>
+    </a>
+    <div class="photographer__details">
+      <p class="photographer__details__location">${photographer.city + ', ' + photographer.country}</p>
+      <p class="photographer__details__tagline">${photographer.tagline}</p>
+      <p class="photographer__details__price">${photographer.price} €</p>
+    </div>
+    <div class="photographer__tags">
+      <span class="photographer__tags__tag">${photographer.tags}</span>
+    </div>
+  </article>
+`;
 
 fetch('./data.json')
   .then(response => {
     return response.json();
   })
-  .then(data => {
-    let photographers = data.photographers;
-    showPhotographers(photographers);
+  .then(({ photographers }) => {
+    const photographersElement = document.querySelector('#photographers');
+
+    photographersElement.innerHTML = photographers.map(template);
+    /*
+    photographersElement.innerHTML = photographers.map(photographer => {
+      const photographerWithImageSRC = { ...photographer, src: '' };
+
+      // {
+      //   "name": "Mimi Keel",
+      //   "id": 243,
+      //   "city": "London",
+      //   "country": "UK",
+      //   "tags": ["portrait", "events", "travel", "animals"],
+      //   "tagline": "Voir le beau dans le quotidien",
+      //   "price": 400,
+      //   "portrait": "MimiKeel.jpg",
+      //   src: ""
+      // },
+
+      return template(photographerWithImageSRC);
+    });
+    */
   })
   .catch(error => {
     console.error(error);
   });
-
-let main = document.querySelector('main');
-let photographerArticle = document.getElementsByClassName('photographer');
-let photographerLink = document.getElementsByClassName('photographer__link');
-let photographerName = document.getElementsByClassName('photographer__link__name');
-let photographerPortait = document.getElementsByClassName('photographer__link__portrait');
-let photographerLocation = document.getElementsByClassName('photographer__details__location');
-let photographerTagline = document.getElementsByClassName('photographer__details__tagline');
-let photographerPrice = document.getElementsByClassName('photographer__details__price');
-let photographerTag = document.getElementsByClassName('photographer__tags__tag');
-
-function showPhotographers(photographers) {
-  for (let i = 0; i < photographers.length; i++) {
-    let photographer = photographers[i];
-
-    photographerName.innerText = photographer.name;
-    photographerLocation.innerText = photographer.city + ', ' + photographer.country;
-    photographerTagline.innerText = photographer.tagline;
-    photographerPrice.innerText = photographer.price;
-
-    console.log(photographerName);
-  }
-}

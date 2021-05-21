@@ -1,0 +1,10 @@
+@import '/src/utils/variables.css';
+
+.photographer__link__portrait {
+  width: 200px;
+  height: 200px;
+}
+
+.photographer {
+  border: 1px solid var(--black-color);
+}
