@@ -1,11 +1,37 @@
 :root {
-  --primary-bg-color: #901c1c;
-  --secondary-bg-color: #d3573c;
+  /* Colors */
+  --primary-color: #901c1c;
+  --secondary-color: #d3573c;
   --third-bg-color: #fafafa;
   --third-text-color: #525252;
 
   --white-color: #ffffff;
   --black-color: #000000;
 
-  --font-family: 'DM Sans', sans-serif;
+  /* Fonts */
+  --global-font: 'DM Sans', sans-serif;
+
+  /* Fonts Weight */
+  --normal: 400;
+  --bold: 500;
+  --extra-bold: 700;
+
+  /* Fonts Size*/
+  --tiny-text: 9px;
+  --small-text: 10px;
+  --small-tag: 12px;
+  --small-subtitle: 13px;
+  --text: 18px;
+  --subtitle: 24px;
+  --title: 36px;
+  --headline: 64px;
+
+  --title-line-heigth: 46.87px;
+  --small-subtitle-line-heigth: 16.93px;
+  --small-text-line-heigth: 13.02px;
+  --tiny-text-line-heigth: 11.72px;
+  --small-tag-line-heigth: 15.62px;
+
+  /* Images Size */
+  --portrait-size: 200px;
 }

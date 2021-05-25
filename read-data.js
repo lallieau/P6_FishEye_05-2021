@@ -1,7 +1,5 @@
-// https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P5+Javascript+%26+Accessibility/FishEyeData.json
-
-const template = photographer => `
-  <article class="photographer">
+const template = photographer =>
+  `<article class="photographer">
     <a href="" aria-label="" class="photographer__link">
       <img class="photographer__link__portrait" src="./public/assets/Photographers/${photographer.portrait}" alt="" />
       <h2 class="photographer__link__name">${photographer.name}</h2>
@@ -11,11 +9,10 @@ const template = photographer => `
       <p class="photographer__details__tagline">${photographer.tagline}</p>
       <p class="photographer__details__price">${photographer.price} €</p>
     </div>
-    <div class="photographer__tags">
-      <span class="photographer__tags__tag">${photographer.tags}</span>
+    <div class="photographer__tags ">
+    ${photographer.tags.map(tag => `<span class="photographer__tags__tag">#${tag}</span>`).join('')}
     </div>
-  </article>
-`;
+  </article>`;
 
 fetch('./data.json')
   .then(response => {
@@ -23,8 +20,8 @@ fetch('./data.json')
   })
   .then(({ photographers }) => {
     const photographersElement = document.querySelector('#photographers');
+    photographersElement.innerHTML = photographers.map(template).join('');
 
-    photographersElement.innerHTML = photographers.map(template);
     /*
     photographersElement.innerHTML = photographers.map(photographer => {
       const photographerWithImageSRC = { ...photographer, src: '' };

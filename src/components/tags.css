@@ -1,0 +1,12 @@
+@import '/src/utils/variables.css';
+
+.photographer__tags__tag {
+  border: 0.5px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0px 6px 0px 6px;
+  color: var(--primary-color);
+  font-size: var(--small-tag);
+  line-height: var(--small-tag-line-heigth);
+  margin: 3px;
+}

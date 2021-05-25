@@ -1,0 +1,56 @@
+@import '/src/utils/variables.css';
+.photographer {
+  text-align: center;
+  padding-bottom: 70px;
+}
+.photographer__link__portrait {
+  width: var(--portrait-size);
+  height: var(--portrait-size);
+  border-radius: 100px;
+  object-fit: cover;
+}
+.photographer__link {
+  text-decoration: none;
+}
+.photographer__link__name {
+  font-size: var(--title);
+  line-height: var(--title-line-heigth);
+  color: var(--secondary-color);
+}
+
+.photographer__details__location {
+  font-size: var(--small-subtitle);
+  line-height: var(--small-subtitle-line-heigth);
+  color: var(--primary-color);
+  margin-bottom: 3px;
+}
+
+.photographer__details__tagline {
+  font-size: var(--small-text);
+  line-height: var(--small-text-line-heigth);
+  color: var(--black-color);
+  margin-bottom: 3px;
+}
+
+.photographer__details__price {
+  font-size: var(--tiny-text);
+  line-height: var(--tiny-text-line-heigth);
+  color: var(--third-text-color);
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  #photographers {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #photographers {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

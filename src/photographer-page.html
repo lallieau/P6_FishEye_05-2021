@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>FishEye</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <header class="header__title">
+      <a href="index.html"><img class="header__title__logo" src="./public/assets/logo.png" alt="FishEye" /></a>
+    </header>
+    <main>
+      <div id="photographer-detail"></div>
+
+      <div>
+        <p>297 081</p>
+        <i aria-label="likes"></i>
+        <p>300 € / jour</p>
+      </div>
+      <label for="trier">Trier par</label>
+      <select name="option" id="trier">
+        <option value="popularity">Popularité</option>
+        <option value="date">Date</option>
+        <option value="title">Titre</option>
+      </select>
+      <div id="medias">
+        <article>
+          <a href="" aria-label="...., closeup view">
+            <img src="./public/assets/${media.image}" alt="" />
+          </a>
+          <div>
+            <h2></h2>
+            <div>
+              <p></p>
+              <i aria-label="likes"></i>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+    <script src="../read-data.js"></script>
+  </body>
+</html>

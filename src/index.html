@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>FishEye</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./components/thumb-photographer.css" />
+    <link rel="stylesheet" href="./base.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,500;1,700&display=swap"
@@ -13,24 +13,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
+    <a class="link__redirection" href="">Passer au contenu</a>
     <header>
-      <a href="">Passer au contenu</a>
-      <a href="index.html"><img src="" alt="FishEye Homepage" /></a>
-      <nav aria-label="photographers categories">
-        <span>#Portrait</span>
-        <span>#Art</span>
-        <span>#Fashion</span>
-        <span>#Architecture</span>
-        <span>#Travel</span>
-        <span>#Sport</span>
-        <span>#Animals</span>
-        <span>#Events</span>
+      <div class="header__title">
+        <a href="index.html"
+          ><img class="header__title__logo" src="./public/assets/logo.png" alt="FishEye Homepage"
+        /></a>
+        <h1 class="header__title__text">Nos photographes</h1>
+      </div>
+      <nav class="header__tag-nav" aria-label="photographers categories">
+        <span class="photographer__tags__tag">#Portrait</span>
+        <span class="photographer__tags__tag">#Art</span>
+        <span class="photographer__tags__tag">#Fashion</span>
+        <span class="photographer__tags__tag">#Architecture</span>
+        <span class="photographer__tags__tag">#Travel</span>
+        <span class="photographer__tags__tag">#Sport</span>
+        <span class="photographer__tags__tag">#Animals</span>
+        <span class="photographer__tags__tag">#Events</span>
       </nav>
     </header>
     <main>
-      <h1>Nos photographes</h1>
       <div id="photographers"></div>
     </main>
-    <script src="../readjson.js"></script>
+    <script src="../read-data.js"></script>
   </body>
 </html>
