@@ -17,28 +17,69 @@
       <a href="index.html"><img class="header__title__logo" src="./public/assets/logo.png" alt="FishEye" /></a>
     </header>
     <main>
-      <div id="photographer-detail"></div>
+      <div id="photographer">
+        <img class="photographer__portrait" src="./public/assets/Photographers/MimiKeel.jpg" alt="" />
+        <div class="photographer__infos">
+          <button class="button-contact">Contactez-moi</button>
+          <div class="photographer__infos__content">
+            <h2 class="photographer__name">Mimi Keel</h2>
+            <p class="photographer__location">London, UK</p>
+            <p class="photographer__tagline">Voir le beau dans le quotidien</p>
+            <div class="photographer__tags">
+              <span class="photographer__tags__tag">#Portrait</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div>
+      <div class="sum-price-likes">
         <p>297 081</p>
         <i aria-label="likes"></i>
         <p>300 € / jour</p>
       </div>
-      <label for="trier">Trier par</label>
-      <select name="option" id="trier">
-        <option value="popularity">Popularité</option>
-        <option value="date">Date</option>
-        <option value="title">Titre</option>
-      </select>
+
+      <form class="sort-media" action="">
+        <label for="trier">Trier par</label>
+        <select name="option" id="trier">
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+        </select>
+      </form>
+
       <div id="medias">
         <article>
           <a href="" aria-label="...., closeup view">
-            <img src="./public/assets/${media.image}" alt="" />
+            <img class="media__img" width="100px" src="./public/assets/Mimi/Animals_Rainbow.jpg" alt="" />
           </a>
-          <div>
-            <h2></h2>
+          <div class="media__infos">
+            <h2>Arc en ciel</h2>
             <div>
-              <p></p>
+              <p>12</p>
+              <i aria-label="likes"></i>
+            </div>
+          </div>
+        </article>
+        <article>
+          <a href="" aria-label="...., closeup view">
+            <img class="media__img" width="100px" src="./public/assets/Mimi/Animals_Rainbow.jpg" alt="" />
+          </a>
+          <div class="media__infos">
+            <h2>Arc en ciel</h2>
+            <div>
+              <p>12</p>
+              <i aria-label="likes"></i>
+            </div>
+          </div>
+        </article>
+        <article>
+          <a href="" aria-label="...., closeup view">
+            <img class="media__img" width="100px" src="./public/assets/Mimi/Animals_Rainbow.jpg" alt="" />
+          </a>
+          <div class="media__infos">
+            <h2>Arc en ciel</h2>
+            <div>
+              <p>12</p>
               <i aria-label="likes"></i>
             </div>
           </div>
