@@ -32,9 +32,13 @@
 }
 
 .button-contact {
-  position: absolute;
+  position: fixed;
   bottom: 30px;
-  margin: 0 auto;
+  margin: 0 auto !important;
+  left: 0;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
 }
 
 .sum-price-likes,
@@ -89,7 +93,7 @@
   .button-contact {
     position: relative;
     top: 0;
-    padding: 20px;
     height: fit-content;
+    margin: 10px 30px !important;
   }
 }

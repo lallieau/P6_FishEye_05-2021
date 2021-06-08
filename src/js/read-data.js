@@ -5,26 +5,6 @@ fetch('./data.json')
   .then(({ photographers }) => {
     const photographersElement = document.querySelector('#photographers');
     photographersElement.innerHTML = photographers.map(template).join('');
-
-    /*
-    photographersElement.innerHTML = photographers.map(photographer => {
-      const photographerWithImageSRC = { ...photographer, src: '' };
-
-      // {
-      //   "name": "Mimi Keel",
-      //   "id": 243,
-      //   "city": "London",
-      //   "country": "UK",
-      //   "tags": ["portrait", "events", "travel", "animals"],
-      //   "tagline": "Voir le beau dans le quotidien",
-      //   "price": 400,
-      //   "portrait": "MimiKeel.jpg",
-      //   src: ""
-      // },
-
-      return template(photographerWithImageSRC);
-    });
-    */
   })
 
   .catch(error => {

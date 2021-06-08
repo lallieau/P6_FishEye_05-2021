@@ -17,15 +17,18 @@
       <a href="index.html"><img class="header__title__logo" src="./public/assets/logo.png" alt="FishEye" /></a>
     </header>
     <main>
+      <div id="modal-form"></div>
       <div id="photographer"></div>
 
       <div class="sum-price-likes">
-        <p>297 081</p>
-        <i aria-label="likes"></i>
+        <div class="total-likes">
+          <p>297 081</p>
+          <i class="fas fa-heart" aria-label="likes"></i>
+        </div>
         <p>300 € / jour</p>
       </div>
 
-      <form class="sort-media" action="">
+      <form id="sort-media" action="">
         <label for="trier">Trier par</label>
         <select name="option" id="trier">
           <option value="popularity">Popularité</option>
@@ -34,45 +37,11 @@
         </select>
       </form>
 
-      <div id="medias">
-        <article>
-          <a href="" aria-label="...., closeup view">
-            <img class="media__img" width="100px" src="./public/assets/Mimi/Animals_Rainbow.jpg" alt="" />
-          </a>
-          <div class="media__infos">
-            <h2>Arc en ciel</h2>
-            <div>
-              <p>12</p>
-              <i aria-label="likes"></i>
-            </div>
-          </div>
-        </article>
-        <article>
-          <a href="" aria-label="...., closeup view">
-            <img class="media__img" width="100px" src="./public/assets/Mimi/Animals_Rainbow.jpg" alt="" />
-          </a>
-          <div class="media__infos">
-            <h2>Arc en ciel</h2>
-            <div>
-              <p>12</p>
-              <i aria-label="likes"></i>
-            </div>
-          </div>
-        </article>
-        <article>
-          <a href="" aria-label="...., closeup view">
-            <img class="media__img" width="100px" src="./public/assets/Mimi/Animals_Rainbow.jpg" alt="" />
-          </a>
-          <div class="media__infos">
-            <h2>Arc en ciel</h2>
-            <div>
-              <p>12</p>
-              <i aria-label="likes"></i>
-            </div>
-          </div>
-        </article>
-      </div>
+      <div id="medias"></div>
     </main>
+
     <script src="../src/js/read-data-photographer-page.js"></script>
+    <script src="../src/js/modal-form.js"></script>
+    <script src="../src/js/valid-form.js"></script>
   </body>
 </html>

@@ -37,9 +37,6 @@
   }
 
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 0 100px 0 100px;
   }
 
@@ -50,6 +47,7 @@
     width: 100%;
     height: auto;
     right: 4%;
+    top: 40px;
   }
 
   .header__title__text {
@@ -68,9 +66,5 @@
     font-size: var(--text);
     font-weight: var(--extra-bold);
     border-radius: 5px;
-  }
-
-  .header__title {
-    width: 100%;
   }
 }

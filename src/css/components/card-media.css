@@ -1,24 +1,33 @@
 .media__img {
-  width: 90%;
-  margin: 0px 20px;
+  width: 100%;
   height: 190px;
   object-fit: cover;
-  object-position: 0px -60px;
+  /*object-position: 0px -60px;*/
   border-radius: 5px;
 }
 
 .media__infos {
   display: flex;
   justify-content: space-between;
-  margin: 10px 20px;
+  margin-bottom: 20px;
   color: var(--primary-color);
+}
+
+#medias {
+  padding: 10px;
+}
+
+.medias__infos__likes {
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {
   #medias {
     margin: 100px 100px 0 100px;
     display: grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
+    padding: 0;
   }
 }
 

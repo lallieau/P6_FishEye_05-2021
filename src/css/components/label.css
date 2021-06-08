@@ -1,0 +1,21 @@
+.sum-price-likes {
+  display: none;
+}
+
+@media screen and (min-width: 1100px) {
+  .sum-price-likes {
+    position: fixed;
+    background-color: var(--secondary-bg-color);
+    bottom: 0;
+    right: 20px;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: var(--subtitle);
+  }
+
+  .total-likes {
+    display: flex;
+    margin-right: 30px;
+  }
+}

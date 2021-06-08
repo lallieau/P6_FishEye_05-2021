@@ -1,11 +1,13 @@
 @import '/src/css/utils/variables.css';
 
-@import '/src/css/components/buttons.css';
 @import '/src/css/components/card-photographers.css';
 @import '/src/css/components/card-media.css';
 @import '/src/css/components/header-photographer.css';
 @import '/src/css/components/tags.css';
+@import '/src/css/components/form.css';
 @import '/src/css/pages/header.css';
+@import '/src/css/components/buttons.css';
+@import '/src/css/components/label.css';
 
 html,
 body,
