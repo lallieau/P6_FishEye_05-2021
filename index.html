@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>FishEye</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./src/css/base.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,500;1,700&display=swap"
@@ -17,24 +17,24 @@
     <header>
       <div class="header__title">
         <a href="index.html"
-          ><img class="header__title__logo" src="./public/assets/logo.png" alt="FishEye Homepage"
+          ><img class="header__title__logo" src="./src/public/assets/logo.png" alt="FishEye Homepage"
         /></a>
         <h1 class="header__title__text">Nos photographes</h1>
       </div>
       <nav class="header__tag-nav" aria-label="photographers categories">
-        <span class="photographer__tags__tag">#Portrait</span>
-        <span class="photographer__tags__tag">#Art</span>
-        <span class="photographer__tags__tag">#Fashion</span>
-        <span class="photographer__tags__tag">#Architecture</span>
-        <span class="photographer__tags__tag">#Travel</span>
-        <span class="photographer__tags__tag">#Sport</span>
-        <span class="photographer__tags__tag">#Animals</span>
-        <span class="photographer__tags__tag">#Events</span>
+        <button class="photographer__tags__tag">#Portrait</button>
+        <button class="photographer__tags__tag">#Art</button>
+        <button class="photographer__tags__tag">#Fashion</button>
+        <button class="photographer__tags__tag">#Architecture</button>
+        <button class="photographer__tags__tag">#Travel</button>
+        <button class="photographer__tags__tag">#Sport</button>
+        <button class="photographer__tags__tag">#Animals</button>
+        <button class="photographer__tags__tag">#Events</button>
       </nav>
     </header>
     <main>
       <div id="photographers"></div>
     </main>
-    <script src="../src/js/read-data.js"></script>
+    <script src="./src/js/photographersList.js"></script>
   </body>
 </html>

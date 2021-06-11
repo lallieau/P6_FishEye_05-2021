@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Openclassrooms - Parcours développeur Front-end",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3"
+  },
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",

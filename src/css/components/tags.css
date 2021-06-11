@@ -11,6 +11,10 @@
   margin-right: 3px;
 }
 
+.header__tag-nav .photographer__tags__tag {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1100px) {
   #photographer .photographer__tags__tag {
     border-radius: 12px;
