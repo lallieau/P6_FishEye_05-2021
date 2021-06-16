@@ -1,57 +1,35 @@
 import { urlId } from './photographerDetail.js';
+import { mediaFactory } from './mediaFactory.js';
 
-const mediaElement = document.querySelector('#medias');
-const option = document.querySelector('#trier').value;
+export function renderMedias(media) {
+  const mediaElement = document.querySelector('#medias');
+  const option = document.querySelector('#trier');
 
-fetch('../data.json')
-  .then(response => {
-    return response.json();
-  })
-  .then(({ media }) => {
+  option.addEventListener('change', () => {
+    displayMedias();
+  });
+
+  const displayMedias = () => {
     const photographerMedias = media.filter(
       photographerMedias => photographerMedias.photographerId === parseInt(urlId),
       photographerMedias => photographerMedias.likes,
       photographerMedias => photographerMedias.date,
       photographerMedias => photographerMedias.title,
     );
-
-    /* Le tri par popularité fonctionne mais pas les autres
-    if ( option === popularity) ....
-
-    Tri par date
-        a = new Date(a.date);
-        b = new Date(b.date);
-        return a > b ? -1 : a < b ? 1 : 0;
-
-    Tri par popularité
-        a.likes - b.likes;
-
-    Tri par titre
-        a.title.toLowerCase().localeCompare(b.title)
-    */
-
     mediaElement.innerHTML = photographerMedias
       .sort(function (a, b) {
-        a.likes - b.likes;
+        if (option.value === 'popularity') {
+          return b.likes - a.likes;
+        } else if (option.value === 'date') {
+          a = new Date(a.date);
+          b = new Date(b.date);
+          return a > b ? -1 : a < b ? 1 : 0;
+        } else if (option.value === 'title') {
+          return a.title.toLowerCase().localeCompare(b.title);
+        }
       })
-      .map(photographerMediasTemplate)
+      .map(mediaFactory)
       .join('');
-  })
-  .catch(error => {
-    console.error(error);
-  });
-
-const photographerMediasTemplate = media =>
-  ` <article>
-    <a href="" aria-label="...., closeup view">
-      <img class="media__img" src="../public/assets/medias/${media.image}" alt="${media.title}" />
-    </a>
-    <div class="media__infos">
-      <h2>${media.title}</h2>
-      <div class="medias__infos__likes">
-        <p>${media.likes}</p>
-        <i class="fas fa-heart" aria-label="likes"></i>
-      </div>
-    </div>
-  </article>
-`;
+  };
+  displayMedias();
+}

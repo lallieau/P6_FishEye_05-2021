@@ -1,19 +1,26 @@
-export { urlId };
-const urlId = new URLSearchParams(window.location.search).get('id');
-const photographerElement = document.querySelector('#photographer');
+import { renderModal } from './modalForm.js';
+import { renderMedias } from './photographerMedias.js';
 
 fetch('../data.json')
   .then(response => {
     return response.json();
   })
-  .then(({ photographers }) => {
-    const photographerDetail = photographers.filter(photographer => photographer.id === parseInt(urlId));
-
-    photographerElement.innerHTML = photographerDetail.map(PhotographerDetailTemplate).join('');
+  .then(json => {
+    renderPhotographer(json);
   })
   .catch(error => {
     console.error(error);
   });
+
+export const urlId = new URLSearchParams(window.location.search).get('id');
+const photographerElement = document.querySelector('#photographer');
+
+function renderPhotographer({ photographers, media }) {
+  const photographerDetail = photographers.filter(photographer => photographer.id === parseInt(urlId));
+  photographerElement.innerHTML = photographerDetail.map(PhotographerDetailTemplate).join('');
+  renderMedias(media);
+  renderModal(photographerDetail);
+}
 
 const PhotographerDetailTemplate = photographer =>
   ` <img class="photographer__portrait" src="../public/assets/Photographers/${photographer.portrait}" alt="" />
