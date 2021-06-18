@@ -21,20 +21,24 @@
   flex-direction: column;
 }
 
-#form input {
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-}
-
 #form label {
   margin-top: 20px;
   font-size: var(--subtitle);
   margin-bottom: 5px;
 }
+.text-control {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 48px;
+  font-size: var(--text);
+}
 
-#form input[type='textarea'] {
-  height: 130px;
+.textarea {
+  height: 100px;
+  font-family: var(--global-font);
 }
 
 .button-form {

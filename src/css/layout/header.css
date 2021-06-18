@@ -2,8 +2,16 @@
   width: 150px;
 }
 
-.link__redirection {
-  display: none;
+.anchor-link {
+  visibility: hidden;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--secondary-bg-color);
+  color: var(--black-color);
+  width: 150px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: var(--extra-bold);
 }
 
 .header__title {

@@ -6,7 +6,7 @@ export function mediaFactory(media) {
   }
 }
 
-const getMediaInfo = media => {
+function getMediaInfo(media) {
   return `
     <div class="media__infos">
       <h2>${media.title}</h2>
@@ -16,7 +16,7 @@ const getMediaInfo = media => {
       </div>
     </div>
   `;
-};
+}
 
 function createImage(media) {
   return `

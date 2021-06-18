@@ -17,7 +17,20 @@
       <a href="../../index.html"><img class="header__title__logo" src="../public/assets/logo.png" alt="FishEye" /></a>
     </header>
     <main>
-      <div id="modal-form"></div>
+      <div id="modal-form">
+        <div class="form-header"></div>
+        <form id="form" action="photographer-page.html" method="get" onsubmit="return validate(event)" novalidate>
+          <label for="firstname">Prénom</label>
+          <input class="text-control" type="text" name="firstname" id="firstname" />
+          <label for="lastname">Nom</label>
+          <input class="text-control" type="text" name="lastname" id="lastname" />
+          <label for="email">Email</label>
+          <input rows="10" cols="50" class="text-control" type="email" name="email" id="email" />
+          <label for="message">Votre message</label>
+          <textarea class="text-control textarea" rows="5" cols="33" id="message"></textarea>
+          <input class="button-form button" type="submit" value="Envoyer" />
+        </form>
+      </div>
       <div id="photographer"></div>
 
       <div class="sum-price-likes">
@@ -31,9 +44,11 @@
       <form id="sort-media" action="">
         <label for="trier">Trier par</label>
         <select name="option" id="trier">
-          <option value="popularity">Popularité</option>
-          <option value="date">Date</option>
-          <option value="title">Titre</option>
+          <optgroup class="option-value">
+            <option class="option-value" value="popularity">Popularité</option>
+            <option class="option-value" value="date">Date</option>
+            <option class="option-value" value="title">Titre</option>
+          </optgroup>
         </select>
       </form>
 
@@ -41,5 +56,6 @@
     </main>
 
     <script type="module" src="../js/photographerDetail.js"></script>
+    <script type="module" src="../js/checkValidityForm.js"></script>
   </body>
 </html>

@@ -1,5 +1,10 @@
 const photographersElement = document.querySelector('#photographers');
 
+document.addEventListener('scroll', () => {
+  const anchorLink = document.querySelector('.anchor-link');
+  anchorLink.style.visibility = 'visible';
+});
+
 const fetchPhotographers = filterTag => {
   fetch('./src/data.json')
     .then(response => {
