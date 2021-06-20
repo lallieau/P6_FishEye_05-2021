@@ -1,5 +1,6 @@
 import { renderModal } from './modalForm.js';
 import { renderMedias } from './photographerMedias.js';
+import { renderSumLikes } from './increaseLikes.js';
 
 fetch('../data.json')
   .then(response => {
@@ -20,6 +21,7 @@ function renderPhotographer({ photographers, media }) {
   photographerElement.innerHTML = photographerDetail.map(PhotographerDetailTemplate).join('');
   renderMedias(media);
   renderModal(photographerDetail);
+  renderSumLikes();
 }
 
 const PhotographerDetailTemplate = photographer =>

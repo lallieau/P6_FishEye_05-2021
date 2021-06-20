@@ -11,7 +11,7 @@ function getMediaInfo(media) {
     <div class="media__infos">
       <h2>${media.title}</h2>
       <div class="medias__infos__likes">
-        <p>${media.likes}</p>
+        <p class="medias__infos__likes__sum">${media.likes}</p>
         <i class="fas fa-heart" aria-label="likes"></i>
       </div>
     </div>
@@ -32,7 +32,7 @@ function createImage(media) {
 function createVideo(media) {
   return `
     <article>
-      <a href="" aria-label="...., closeup view">
+      <a "href="" aria-label="...., closeup view">
         <video class="media__img" controls>
           <source src="../public/assets/medias/${media.video}" type="video/mp4">
         </video>
