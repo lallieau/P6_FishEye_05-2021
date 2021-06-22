@@ -4,18 +4,22 @@ export function renderSumLikes() {
 
   const sumMediasLikes = new Array();
   const reducer = (accumulator, curr) => accumulator + curr;
-  const showSumMediasLikes = () => (allMediasLikes.innerHTML = sumMediasLikes.reduce(reducer));
 
   mediaLikes.forEach(element => {
     let sumLike = parseInt(element.textContent);
+
     sumMediasLikes.push(sumLike);
 
     const addLikes = () => {
       sumLike++;
       element.innerHTML = sumLike;
+      result++;
+      allMediasLikes.innerHTML = result;
     };
 
     element.addEventListener('click', () => addLikes());
   });
-  showSumMediasLikes();
+
+  let result = sumMediasLikes.reduce(reducer);
+  allMediasLikes.innerHTML = result;
 }
