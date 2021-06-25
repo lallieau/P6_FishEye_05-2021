@@ -21,7 +21,7 @@ function getMediaInfo(media) {
 function createImage(media) {
   return `
     <article>
-      <a href="" aria-label="...., closeup view">
+      <a href="../public/assets/medias/${media.image}">
         <img class="media__img" src="../public/assets/medias/${media.image}" alt="${media.title}" />
       </a>
       ${getMediaInfo(media)}
@@ -32,7 +32,7 @@ function createImage(media) {
 function createVideo(media) {
   return `
     <article>
-      <a "href="" aria-label="...., closeup view">
+      <a "href="../public/assets/medias/${media.video}" aria-label="...., closeup view">
         <video class="media__img" controls>
           <source src="../public/assets/medias/${media.video}" type="video/mp4">
         </video>

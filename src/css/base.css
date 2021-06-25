@@ -8,6 +8,7 @@
 @import '/src/css/layout/header.css';
 @import '/src/css/components/buttons.css';
 @import '/src/css/components/label.css';
+@import '/src/css/components/lightbox.css';
 
 html,
 body,
