@@ -1,25 +1,19 @@
 export function renderSumLikes() {
-  const mediaLikes = document.querySelectorAll('.medias__infos__likes__sum');
-  const allMediasLikes = document.querySelector('.total-likes__sum');
+  const mediaLikesElement = document.querySelectorAll('.medias__infos__likes__sum');
+  const allMediasLikesElement = document.querySelector('.total-likes__sum');
+  let allLikes = 0;
 
-  const sumMediasLikes = new Array();
-  const reducer = (accumulator, curr) => accumulator + curr;
+  mediaLikesElement.forEach(element => {
+    let likes = parseInt(element.textContent);
+    allLikes += likes;
 
-  mediaLikes.forEach(element => {
-    let sumLike = parseInt(element.textContent);
-
-    sumMediasLikes.push(sumLike);
-
-    const addLikes = () => {
-      sumLike++;
-      element.innerHTML = sumLike;
-      result++;
-      allMediasLikes.innerHTML = result;
+    const handleUpdateLikes = () => {
+      element.innerHTML = ++likes;
+      allMediasLikesElement.innerHTML = ++allLikes;
     };
 
-    element.addEventListener('click', () => addLikes());
+    element.addEventListener('click', handleUpdateLikes);
   });
 
-  let result = sumMediasLikes.reduce(reducer);
-  allMediasLikes.innerHTML = result;
+  allMediasLikesElement.innerHTML = allLikes;
 }

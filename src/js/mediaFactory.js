@@ -21,9 +21,9 @@ function getMediaInfo(media) {
 function createImage(media) {
   return `
     <article>
-      <a href="../public/assets/medias/${media.image}">
+      <div data-href="../public/assets/medias/${media.image}">
         <img class="media__img" src="../public/assets/medias/${media.image}" alt="${media.title}" />
-      </a>
+      </div>
       ${getMediaInfo(media)}
     </article>
   `;
