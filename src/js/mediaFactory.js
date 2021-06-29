@@ -32,11 +32,11 @@ function createImage(media) {
 function createVideo(media) {
   return `
     <article>
-      <a "href="../public/assets/medias/${media.video}" aria-label="...., closeup view">
+      <div data-href="../public/assets/medias/${media.video}" aria-label="...., closeup view">
         <video class="media__img" controls>
           <source src="../public/assets/medias/${media.video}" type="video/mp4">
         </video>
-      </a>
+      </div>
       ${getMediaInfo(media)}
     </article>
   `;
