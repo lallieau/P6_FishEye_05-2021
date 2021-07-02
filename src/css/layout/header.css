@@ -2,7 +2,14 @@
   width: 150px;
 }
 
-.anchor-link {
+.anchor {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.anchor__link {
+  position: fixed;
   visibility: hidden;
   text-align: center;
   padding: 10px;
@@ -12,6 +19,7 @@
   border-radius: 5px;
   text-decoration: none;
   font-weight: var(--extra-bold);
+  z-index: 2;
 }
 
 .header__title {

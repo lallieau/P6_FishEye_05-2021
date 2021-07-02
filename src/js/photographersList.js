@@ -1,8 +1,12 @@
 const photographersElement = document.querySelector('#photographers');
+const anchorLink = document.querySelector('.anchor__link');
 
 document.addEventListener('scroll', () => {
-  const anchorLink = document.querySelector('.anchor-link');
-  anchorLink.style.visibility = 'visible';
+  if (window.scrollY < 220) {
+    anchorLink.style.visibility = 'hidden';
+  } else {
+    anchorLink.style.visibility = 'visible';
+  }
 });
 
 const fetchPhotographers = filterTag => {
