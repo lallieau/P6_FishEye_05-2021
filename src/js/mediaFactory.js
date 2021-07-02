@@ -1,7 +1,9 @@
 export function mediaFactory(media) {
   if (!!media.image) {
     return createImage(media);
-  } else if (!!media.video) {
+  }
+
+  if (!!media.video) {
     return createVideo(media);
   }
 }

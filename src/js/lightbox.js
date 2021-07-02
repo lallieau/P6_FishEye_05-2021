@@ -1,13 +1,40 @@
 export function renderLightbox() {
   const links = document.querySelectorAll('div[data-href$=".jpg"], div[data-href$=".mp4"]');
+
   const gallery = [];
+  const mediaName = document.createElement('p');
+  mediaName.classList.add('lightbox__container__media-name');
 
   const closeLightbox = () => {
-    document.querySelector('.lightbox').classList.add('fadeOut');
+    const lightbox = document.querySelector('.lightbox');
+    lightbox.classList.add('fadeOut');
+    lightbox.style.zIndex = '-10';
     // document.location.reload();
   };
 
-  const lightboxTemplate = () => {
+  const createMediaName = url => {
+    let array = url.split('/');
+    let mediaNameContent = array[array.length - 1].replaceAll('_', ' ');
+    if (mediaNameContent.endsWith('.jpg')) {
+      return mediaNameContent.replace('.jpg', ' ');
+    } else {
+      return mediaNameContent.replace('.mp4', ' ');
+    }
+  };
+
+  const generateVideoTemplate = (url, container) => {
+    container.innerHTML = `<video class="lightbox__container__video" controls>
+    <source src="${url}" type="video/mp4">
+  </video>`;
+  };
+
+  const generateImageTemplate = (url, container) => {
+    const image = new Image();
+    image.src = url;
+    container.append(image);
+  };
+
+  const generateLightboxTemplate = () => {
     const template = document.createElement('div');
     template.classList.add('lightbox');
     template.innerHTML = `<button class="lightbox__close">Fermer</button>
@@ -22,70 +49,61 @@ export function renderLightbox() {
     closeBtn.addEventListener('click', closeLightbox);
   };
 
-  const loadMedia = (url, index) => {
-    let title = document.createElement('p');
-    title.classList.add('lightbox__container__title');
-    if (url.endsWith('.mp4')) {
-      const container = document.querySelector('.lightbox__container');
-      container.innerHTML = '';
-      container.innerHTML = `<video class="lightbox__container__video" controls>
-      <source src="${url}" type="video/mp4">
-    </video>`;
-      container.append(title);
-    } else {
-      const container = document.querySelector('.lightbox__container');
-      const image = new Image();
-      image.src = url;
-      container.innerHTML = '';
+  const loadMedia = (url, index, container) => {
+    const isNextMedia = index === gallery.length - 1;
+    const isFirstMedia = index === 0;
 
-      container.append(image);
-      container.append(title);
+    if (url.endsWith('.mp4')) {
+      generateVideoTemplate(url, container);
+    }
+    if (url.endsWith('.jpg')) {
+      generateImageTemplate(url, container);
     }
 
-    const createTitleMedia = url => {
-      let array = url.split('/');
-      let titleContent = array[array.length - 1].replaceAll('_', ' ');
-      if (titleContent.endsWith('.jpg')) {
-        return titleContent.replace('.jpg', ' ');
-      } else {
-        return titleContent.replace('.mp4', ' ');
-      }
-    };
-
-    title.innerText = createTitleMedia(url);
+    mediaName.innerText = createMediaName(url);
+    container.append(mediaName);
 
     const nextImage = e => {
+      container.innerHTML = '';
       e.preventDefault();
-      if (index === gallery.length - 1) {
+
+      if (isNextMedia) {
         index = -1;
       }
-      loadMedia(gallery[index + 1], index + 1);
+
+      loadMedia(gallery[index + 1], index + 1, container);
     };
 
     const prevImage = e => {
+      container.innerHTML = '';
       e.preventDefault();
-      if (index === 0) {
+
+      if (isFirstMedia) {
         index = gallery.length;
       }
-      loadMedia(gallery[index - 1], index - 1);
+
+      loadMedia(gallery[index - 1], index - 1, container);
     };
 
-    const nextBtn = document.querySelector('.lightbox__next');
-    nextBtn.addEventListener('click', nextImage);
+    const nextButton = document.querySelector('.lightbox__next');
+    nextButton.addEventListener('click', nextImage);
 
-    const prevBtn = document.querySelector('.lightbox__prev');
-    prevBtn.addEventListener('click', prevImage);
+    const prevButton = document.querySelector('.lightbox__prev');
+    prevButton.addEventListener('click', prevImage);
   };
 
   links.forEach(link => {
     const url = link.getAttribute('data-href');
     gallery.push(url);
-    const index = gallery.indexOf(url);
+
+    const index = gallery.findIndex(galleryURL => galleryURL === url);
 
     link.addEventListener('click', e => {
       e.preventDefault();
-      lightboxTemplate();
-      loadMedia(url, index);
+      generateLightboxTemplate();
+
+      const container = document.querySelector('.lightbox__container');
+      loadMedia(url, index, container);
     });
   });
 }

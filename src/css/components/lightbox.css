@@ -1,4 +1,5 @@
 .lightbox {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -72,7 +73,7 @@
   flex-direction: column;
 }
 
-.lightbox__container .lightbox__container__title {
+.lightbox__container .lightbox__container__media-name {
   font-size: var(--subtitle);
   text-align: left;
   justify-content: left;

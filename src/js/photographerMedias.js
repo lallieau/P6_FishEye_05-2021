@@ -31,5 +31,6 @@ export function renderMedias(media) {
       .map(mediaFactory)
       .join('');
   };
+
   displayMedias();
 }
