@@ -41,16 +41,51 @@
         <p id="sum-price-likes__price"></p>
       </div>
 
-      <form id="sort-media" action="">
-        <label for="trier">Trier par</label>
+      <!-- <div class="dropdowns">
         <select name="option" id="trier">
-          <optgroup class="option-value">
-            <option class="option-value" value="popularity">Popularité</option>
-            <option class="option-value" value="date">Date</option>
-            <option class="option-value" value="title">Titre</option>
-          </optgroup>
+          <option value="popularity">Popularité</option>
+          <option class="option-value" value="popularity">Popularité</option>
+          <option class="option-value" value="date">Date</option>
+          <option class="option-value" value="title">Titre</option>
         </select>
-      </form>
+      </div> -->
+      <div class="dropdowns">
+        <p>Trier par</p>
+        <form id="app-cover">
+          <div id="select-box">
+            <input type="checkbox" id="options-view-button" />
+            <div id="select-button" class="brd">
+              <div id="chevrons">
+                <i class="fas fa-chevron-up"></i>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+            <div id="options">
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="popularity" checked />
+                <!-- <input class="s-c bottom" type="radio" name="platform" value="popularity" checked /> -->
+                <span class="label">Popularité</span>
+                <span class="opt-val">Popularité</span>
+              </div>
+
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="date" />
+                <!-- <input class="s-c bottom" type="radio" name="platform" value="date" /> -->
+                <span class="label">Date</span>
+                <span class="opt-val">Date</span>
+              </div>
+
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="title" />
+                <!-- <input class="s-c bottom" type="radio" name="platform" value="title" /> -->
+                <span class="label">Titre</span>
+                <span class="opt-val">Titre</span>
+              </div>
+              <div id="option-bg"></div>
+            </div>
+          </div>
+        </form>
+      </div>
 
       <div id="medias"></div>
     </main>

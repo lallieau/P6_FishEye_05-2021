@@ -16,15 +16,16 @@ fetch('../data.json')
   });
 
 export const urlId = new URLSearchParams(window.location.search).get('id');
+export const filterUrl = new URLSearchParams(window.location.search).get('sortBy');
+
 const photographerElement = document.querySelector('#photographer');
 const photographerPrice = document.getElementById('sum-price-likes__price');
 
 function renderPhotographer({ photographers, media }) {
   const photographerDetail = photographers.filter(photographer => photographer.id === parseInt(urlId));
   photographerElement.innerHTML = photographerDetail.map(PhotographerDetailTemplate).join('');
-
   photographerPrice.innerHTML = photographerDetail[0].price + ' €';
-  renderMedias(media);
+  renderMedias(filterUrl, media);
   renderModal(photographerDetail);
   renderSumLikes();
   renderLightbox();

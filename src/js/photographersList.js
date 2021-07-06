@@ -46,7 +46,9 @@ window.onload = () => {
 
 const PhotographersListTemplate = photographer =>
   `<article class="photographer">
-    <a href="./src/pages/photographer-page.html?id=${photographer.id}" aria-label="" class="photographer__link">
+    <a href="./src/pages/photographer-page.html?id=${
+      photographer.id
+    }&sortBy=${'popularity'}" aria-label="" class="photographer__link">
       <img class="photographer__link__portrait" src="./src/public/assets/Photographers/${
         photographer.portrait
       }" alt="" />
