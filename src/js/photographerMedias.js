@@ -2,12 +2,12 @@ import { urlId } from './photographerDetail.js';
 import { mediaFactory } from './mediaFactory.js';
 
 export function renderMedias(filterUrl, media) {
-  const dropdown = document.querySelector('#options');
+  const sortBy = filterUrl.get('sortBy');
   const option = document.querySelectorAll('.option input');
   const mediaElement = document.querySelector('#medias');
 
-  const displayMedias = (filterUrl, input) => {
-    if (input === 'popularity' && filterUrl === input) {
+  const displayMedias = () => {
+    if (sortBy === 'popularity') {
       const photographerMedias = media.filter(
         photographerMedias => photographerMedias.photographerId === parseInt(urlId),
         photographerMedias => photographerMedias.likes,
@@ -20,7 +20,7 @@ export function renderMedias(filterUrl, media) {
         .join('');
     }
 
-    if (input === 'date' && filterUrl === input) {
+    if (sortBy === 'date') {
       const photographerMedias = media.filter(
         photographerMedias => photographerMedias.photographerId === parseInt(urlId),
         photographerMedias => photographerMedias.date,
@@ -35,7 +35,7 @@ export function renderMedias(filterUrl, media) {
         .join('');
     }
 
-    if (input === 'title' && filterUrl === input) {
+    if (sortBy === 'title') {
       const photographerMedias = media.filter(
         photographerMedias => photographerMedias.photographerId === parseInt(urlId),
         photographerMedias => photographerMedias.title,
@@ -50,27 +50,16 @@ export function renderMedias(filterUrl, media) {
   };
 
   option.forEach(input => {
-    if (input.checked) {
-      displayMedias(filterUrl, input.value);
+    const newSortBy = input.value;
+    if (newSortBy === sortBy) {
+      input.setAttribute('checked', true);
+      // displayMedias(filterUrl, newSortBy);
+      displayMedias();
     }
-  });
-
-  dropdown.addEventListener('change', () => {
-    option.forEach(input => {
-      if (input.checked) {
-        filterUrl = input.value;
-        displayMedias(filterUrl, input.value);
-      }
+    input.addEventListener('change', () => {
+      filterUrl.set('sortBy', newSortBy);
+      // window.location.search = filterUrl.toString();
+      window.location.search = filterUrl;
     });
   });
 }
-
-// dropdown.addEventListener('change', () => {
-//   // console.log(window.location.search);
-//   // let url = new URLSearchParams(window.location.search).get('sortBy');
-//   //const url = document.location.href;
-//   filterUrl = option.value;
-//   // console.log(window.location.search);
-//   // // console.log(url);
-//   // displayMedias();
-// });

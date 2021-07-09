@@ -8,8 +8,7 @@ export function renderLightbox() {
   const closeLightbox = () => {
     const lightbox = document.querySelector('.lightbox');
     lightbox.classList.add('fadeOut');
-    lightbox.style.zIndex = '-10';
-    // document.location.reload();
+    setTimeout(() => lightbox.remove(), 300);
   };
 
   const createMediaName = url => {
@@ -100,6 +99,7 @@ export function renderLightbox() {
 
     link.addEventListener('click', e => {
       e.preventDefault();
+
       generateLightboxTemplate();
 
       const container = document.querySelector('.lightbox__container');
