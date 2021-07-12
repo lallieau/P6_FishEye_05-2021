@@ -17,7 +17,6 @@ fetch('../data.json')
 
 const searchParams = new URLSearchParams(window.location.search);
 export const urlId = searchParams.get('id');
-console.log(window.location.search);
 const photographerElement = document.querySelector('#photographer');
 const photographerPrice = document.getElementById('sum-price-likes__price');
 
