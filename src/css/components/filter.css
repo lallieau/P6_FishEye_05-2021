@@ -9,6 +9,7 @@
 .dropdowns p {
   padding: 10px;
 }
+
 #app-cover {
   width: 150px;
   height: 42px;
@@ -46,6 +47,10 @@
 .option i {
   width: 16px;
   height: 16px;
+  position: absolute;
+  left: 14px;
+  padding: 0;
+  display: none;
 }
 
 .option,
@@ -60,7 +65,7 @@
   right: 0;
   bottom: 0;
   width: 12px;
-  padding: 9px 14px;
+  padding: 14px;
 }
 
 #chevrons i {
@@ -69,16 +74,6 @@
   color: var(--white-color);
   font-size: 12px;
   text-align: right;
-}
-
-#options-view-button:checked + #select-button #chevrons i {
-  color: var(--white-color);
-}
-
-.options {
-  position: absolute;
-  left: 0;
-  width: 250px;
 }
 
 #options {
@@ -101,13 +96,6 @@
   z-index: 2;
 }
 
-.option i {
-  position: absolute;
-  left: 14px;
-  padding: 0;
-  display: none;
-}
-
 #options-view-button:checked ~ #options .option i {
   display: block;
   padding: 12px 0;
@@ -116,7 +104,6 @@
 .label {
   display: none;
   padding: 0;
-  /* margin-left: 27px; */
   border-bottom: 0.5px solid rgb(255, 255, 255, 0.5);
 }
 
@@ -130,14 +117,7 @@
   left: 0;
   width: 100%;
   height: 50%;
-}
-
-.s-c.top {
   top: 0;
-}
-
-.s-c.bottom {
-  bottom: 0;
 }
 
 input[type='radio'] {
@@ -151,50 +131,9 @@ input[type='radio'] {
   cursor: pointer;
 }
 
-.s-c:hover ~ i {
-  color: #fff;
-  opacity: 0;
-}
-
 .s-c:hover {
   height: 100%;
   z-index: 1;
-}
-
-.s-c.bottom:hover + i {
-  bottom: -25px;
-  animation: moveup 0.3s ease 0.1s forwards;
-}
-
-.s-c.top:hover ~ i {
-  top: -25px;
-  animation: movedown 0.3s ease 0.1s forwards;
-}
-
-@keyframes moveup {
-  0% {
-    bottom: -25px;
-    opacity: 0;
-  }
-  100% {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes movedown {
-  0% {
-    top: -25px;
-    opacity: 0;
-  }
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-.label {
-  transition: 0.3s ease all;
 }
 
 .opt-val {
@@ -211,16 +150,8 @@ input[type='radio'] {
   transform: scale(1);
 }
 
-.option input[type='radio']:checked ~ i {
-  top: 0;
-  bottom: auto;
-  opacity: 1;
-  animation: unset;
-}
-
-.option input[type='radio']:checked ~ i,
 .option input[type='radio']:checked ~ .label {
-  color: #fff;
+  color: var(--white-color);
 }
 
 .option input[type='radio']:checked ~ .label:before {
@@ -235,10 +166,6 @@ input[type='radio'] {
 
 #options-view-button:not(:checked) ~ #options .option input[type='radio']:checked ~ .opt-val {
   top: -30px;
-}
-
-.option:nth-child(1) input[type='radio']:checked ~ .label:before {
-  border-radius: 4px 4px 0 0;
 }
 
 .option:nth-child(1) input[type='radio']:checked ~ .opt-val {
@@ -266,27 +193,4 @@ input[type='radio'] {
   transition: 0.3s ease all;
   z-index: 1;
   display: none;
-}
-
-#options-view-button:checked ~ #options #option-bg {
-  display: block;
-}
-
-.option:hover .label {
-  color: #fff;
-}
-
-#ytd-url {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 10px 14px;
-  margin: 20px;
-  color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-  background-color: #143240;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
 }

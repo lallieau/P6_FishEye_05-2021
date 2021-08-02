@@ -6,8 +6,6 @@ export function renderMedias(filterUrl, media) {
   const option = document.querySelectorAll('.option input');
   const mediaElement = document.querySelector('#medias');
 
-  //const sortByKey = key => (a, b) => a[key] + b[key];
-
   const displayMedias = () => {
     if (sortBy === 'popularity') {
       const photographerMedias = media.filter(
