@@ -9,6 +9,7 @@
     bottom: 0;
     right: 20px;
     display: flex;
+    z-index: 99;
     padding: 15px;
     border-radius: 5px 5px 0px 0px;
     font-size: var(--subtitle);

@@ -31,28 +31,44 @@ export function checkValidityForm() {
   }
 
   function validate(event) {
-    console.log(validate(event));
     event.preventDefault();
     formularIsValid = true;
 
     if (!firstNameValidation()) {
+      firstNameInput.parentNode.setAttribute('data-error-visible', true);
       formularIsValid = false;
+    } else {
+      firstNameInput.parentNode.setAttribute('data-error-visible', false);
     }
 
     if (!lastNameValidation()) {
+      lastNameInput.parentNode.setAttribute('data-error-visible', true);
       formularIsValid = false;
+    } else {
+      lastNameInput.parentNode.setAttribute('data-error-visible', false);
     }
 
     if (!emailValidation()) {
+      emailInput.parentNode.setAttribute('data-error-visible', true);
       formularIsValid = false;
+    } else {
+      emailInput.parentNode.setAttribute('data-error-visible', false);
     }
 
     if (!messageValidation()) {
+      messageInput.parentNode.setAttribute('data-error-visible', true);
       formularIsValid = false;
+    } else {
+      messageInput.parentNode.setAttribute('data-error-visible', false);
     }
 
     if (formularIsValid) {
       modalForm.style.display = 'none';
+
+      console.log('Prénom : ' + firstNameInput.value);
+      console.log('Nom : ' + lastNameInput.value);
+      console.log('Email : ' + emailInput.value);
+      console.log('Message : ' + messageInput.value);
     }
   }
 }
