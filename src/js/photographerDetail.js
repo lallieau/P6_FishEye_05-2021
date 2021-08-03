@@ -33,8 +33,9 @@ function renderPhotographer({ photographers, media }) {
 
 const PhotographerDetailTemplate = photographer =>
   ` <img class="photographer__portrait" src="../public/assets/Photographers/${photographer.portrait}" alt="" />
+  <button class="button-contact button">Contactez-moi</button>
     <div class="photographer__infos">
-      <button class="button-contact button">Contactez-moi</button>
+     
       <div class="photographer__infos__content">
         <h2 class="photographer__name">${photographer.name}</h2>
         <p class="photographer__location">${photographer.city + ', ' + photographer.country}</p>
