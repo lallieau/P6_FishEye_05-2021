@@ -9,6 +9,7 @@
 }
 
 .anchor__link {
+  margin: 0 auto;
   position: fixed;
   visibility: hidden;
   text-align: center;

@@ -34,7 +34,7 @@ function createImage(media) {
 function createVideo(media) {
   return `
     <article>
-      <div data-href="../public/assets/medias/${media.video}" aria-label="...., closeup view">
+      <div data-href="../public/assets/medias/${media.video}" aria-label="video ${media.title}">
         <video class="media__img" controls>
           <source src="../public/assets/medias/${media.video}" type="video/mp4">
         </video>

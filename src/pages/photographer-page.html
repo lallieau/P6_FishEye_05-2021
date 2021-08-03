@@ -12,50 +12,85 @@
     />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
   </head>
+
   <body>
-    <header class="header__title">
-      <a href="../../index.html"><img class="header__title__logo" src="../public/assets/logo.png" alt="FishEye" /></a>
+    <header class="header__title" role="banner">
+      <a href="../../index.html">
+        <img
+          role="img"
+          aria-label="logo Fisheye"
+          class="header__title__logo"
+          src="../public/assets/logo.png"
+          alt="FishEye Logo"
+        />
+      </a>
     </header>
+
     <main>
-      <div id="modal-form">
-        <div class="form-header"></div>
+      <div id="modal-form" role="dialog" aria-label="contact photographer">
+        <div class="form-header" aria-label="form header"></div>
         <form id="form" name="reserve" action="index.html" method="get" onsubmit="return validate(event)" novalidate>
-          <div class="formData" data-error="Vous devez entrer votre prénom.">
+          <div class="formData" data-error="Vous devez entrer votre prénom." aria-label="firstname field">
             <label for="firstname">Prénom</label><br />
-            <input class="text-control" type="text" id="firstname" name="firstname" minlength="2" required /><br />
+            <input
+              class="text-control"
+              type="text"
+              id="firstname"
+              name="firstname"
+              minlength="2"
+              required
+              aria-required="true"
+            /><br />
           </div>
-          <div class="formData" data-error="Vous devez entrer votre nom.">
+          <div class="formData" data-error="Vous devez entrer votre nom." aria-label="name field">
             <label for="lastname">Nom</label><br />
-            <input class="text-control" type="text" id="lastname" name="lastname" minlength="2" required /><br />
+            <input
+              class="text-control"
+              type="text"
+              id="lastname"
+              name="lastname"
+              minlength="2"
+              required
+              aria-required="true"
+            /><br />
           </div>
-          <div class="formData" data-error="Vous devez entrer une adresse email valide.">
+          <div class="formData" data-error="Vous devez entrer une adresse email valide." aria-label="email field">
             <label for="email">E-mail</label><br />
-            <input class="text-control" type="email" id="email" name="email" required /><br />
+            <input class="text-control" type="email" id="email" name="email" required aria-required="true" /><br />
           </div>
 
-          <div class="formData" data-error="Vous devez écrire un message.">
+          <div class="formData" data-error="Vous devez écrire un message." aria-label="message field">
             <label for="message">Votre message</label>
-            <textarea class="text-control textarea" rows="5" cols="33" id="message"></textarea><br />
+            <textarea
+              class="text-control textarea"
+              rows="5"
+              cols="33"
+              id="message"
+              required
+              aria-required="true"
+            ></textarea
+            ><br />
           </div>
 
           <br />
-          <input class="btn-submit button" type="submit" value="Envoyer" />
+          <input class="btn-submit" type="submit" value="Envoyer" />
         </form>
       </div>
-      <div id="photographer"></div>
 
-      <div class="sum-price-likes">
-        <div class="total-likes">
-          <p class="total-likes__sum"></p>
-          <i class="fas fa-heart" aria-label="likes"></i>
+      <header id="photographer" aria-label="photographer profile"></header>
+
+      <div class="sum-price-likes" aria-label="information on the photographer's price and the number of likes">
+        <div class="total-likes" aria-label="display of the number of likes">
+          <h2 class="total-likes__sum" aria-label="number of likes"></h2>
+          <i class="fas fa-heart" aria-label="heart icon"></i>
         </div>
-        <p id="sum-price-likes__price"></p>
+        <h2 id="sum-price-likes__price" aria-label="display photographer price"></h2>
       </div>
 
-      <div class="dropdowns">
+      <div class="dropdowns" aria-label="medias filter drop-down list">
         <p>Trier par</p>
-        <form id="app-cover">
-          <div id="select-box">
+        <form id="dropdowns__select">
+          <div id="select-box" aria-label="medias filter list">
             <input type="checkbox" id="options-view-button" />
             <div id="select-button">
               <div id="chevrons">
@@ -64,19 +99,19 @@
               </div>
             </div>
             <div id="options">
-              <div class="option">
+              <div class="option" aria-label="filter by popularity">
                 <input class="s-c top" type="radio" name="platform" value="popularity" checked />
                 <span class="label">Popularité</span>
                 <span class="opt-val">Popularité</span>
               </div>
 
-              <div class="option">
+              <div class="option" aria-label="filter by date">
                 <input class="s-c top" type="radio" name="platform" value="date" />
                 <span class="label">Date</span>
                 <span class="opt-val">Date</span>
               </div>
 
-              <div class="option">
+              <div class="option" aria-label="filter by title">
                 <input class="s-c top" type="radio" name="platform" value="title" />
                 <span class="label">Titre</span>
                 <span class="opt-val">Titre</span>
@@ -87,8 +122,9 @@
         </form>
       </div>
 
-      <div id="medias"></div>
+      <div id="medias" role="feed"></div>
     </main>
+
     <script type="module" src="../js/photographerDetail.js"></script>
     <!-- <script>
       const modalForm = document.querySelector('#modal-form');

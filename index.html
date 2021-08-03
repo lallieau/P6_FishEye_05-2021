@@ -13,17 +13,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
-    <div class="anchor">
-      <a class="anchor__link" href="#content">Passer au contenu</a>
+    <div class="anchor" role="link" aria-label="link to return to main content">
+      <a class="anchor__link" href="#photographers">Passer au contenu</a>
     </div>
     <header>
       <div class="header__title">
         <a href="index.html"
-          ><img class="header__title__logo" src="./src/public/assets/logo.png" alt="FishEye Homepage"
+          ><img
+            role="img"
+            aria-label="logo Fisheye"
+            class="header__title__logo"
+            src="./src/public/assets/logo.png"
+            alt="FishEye Logo"
         /></a>
         <h1 class="header__title__text">Nos photographes</h1>
       </div>
-      <nav class="header__tag-nav" aria-label="photographers categories">
+      <nav class="header__tag-nav" aria-label="list of different categories of photographers">
         <button class="photographer__tags__tag">#Portrait</button>
         <button class="photographer__tags__tag">#Art</button>
         <button class="photographer__tags__tag">#Fashion</button>
@@ -34,9 +39,7 @@
         <button class="photographer__tags__tag">#Events</button>
       </nav>
     </header>
-    <main id="content">
-      <div id="photographers"></div>
-    </main>
+    <main id="photographers"></main>
     <script src="./src/js/photographersList.js"></script>
   </body>
 </html>

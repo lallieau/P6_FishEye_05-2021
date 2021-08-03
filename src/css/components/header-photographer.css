@@ -38,6 +38,13 @@
   margin: 0 auto !important;
   text-align: center;
   cursor: pointer;
+
+  padding: 15px 10px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  font-size: var(--text);
+  border-radius: 5px;
 }
 
 .sum-price-likes,
@@ -51,11 +58,6 @@
     margin: 0 100px 0 100px;
     padding: 56px 50px;
     justify-content: space-around;
-  }
-
-  .photographer__infos {
-    display: flex;
-    flex-direction: row-reverse;
   }
 
   .photographer__portrait {
