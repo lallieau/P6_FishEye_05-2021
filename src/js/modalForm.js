@@ -9,17 +9,25 @@ export function renderModal(photographerDetail) {
   const buttonContact = document.querySelector('.button-contact');
   const formHeader = document.querySelector('.form-header');
 
+  const mainContent = document.getElementById('main-content');
+
   formHeader.innerHTML = photographerDetail.map(formTemplate).join('');
   const modalCloseBtn = document.querySelector('.close');
-  modalCloseBtn.addEventListener('click', closeModal);
 
-  buttonContact.addEventListener('click', openModal);
-
-  function openModal() {
+  const openModal = () => {
     modalForm.style.display = 'block';
-  }
 
-  function closeModal() {
+    mainContent.setAttribute('aria-hidden', 'true');
+    console.log(mainContent);
+    modalForm.setAttribute('aria-hidden', 'false');
+
+    console.log(modalForm);
+  };
+
+  const closeModal = () => {
     modalForm.style.display = 'none';
-  }
+  };
+
+  modalCloseBtn.addEventListener('click', closeModal);
+  buttonContact.addEventListener('click', openModal);
 }

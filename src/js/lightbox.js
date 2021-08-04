@@ -5,6 +5,9 @@ export function renderLightbox() {
   const mediaName = document.createElement('p');
   mediaName.classList.add('lightbox__container__media-name');
 
+  // const mainContent = document.getElementsByClassName('main-content');
+  // mainContent.attr('aria-hidden', 'true');
+
   const closeLightbox = () => {
     const lightbox = document.querySelector('.lightbox');
     lightbox.classList.add('fadeOut');
@@ -23,8 +26,8 @@ export function renderLightbox() {
 
   const generateVideoTemplate = (url, container) => {
     container.innerHTML = `<video class="lightbox__container__video" controls>
-    <source src="${url}" type="video/mp4">
-  </video>`;
+      <source src="${url}" type="video/mp4">
+    </video>`;
   };
 
   const generateImageTemplate = (url, container) => {
@@ -34,6 +37,8 @@ export function renderLightbox() {
   };
 
   const generateLightboxTemplate = () => {
+    // mainContent.innerHTML = "aria-hidden='true'";
+    // console.log(mainContent);
     const template = document.createElement('div');
     template.classList.add('lightbox');
     template.innerHTML = `<button class="lightbox__close">Fermer</button>

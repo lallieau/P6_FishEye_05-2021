@@ -28,7 +28,7 @@ function renderPhotographer({ photographers, media }) {
   renderModal(photographerDetail);
   renderSumLikes();
   renderLightbox();
-  checkValidityForm();
+  // checkValidityForm();
 }
 
 const PhotographerDetailTemplate = photographer =>
@@ -36,13 +36,13 @@ const PhotographerDetailTemplate = photographer =>
     photographer.portrait
   }" alt="Photo portrait de ${photographer.name}" />
     <button class="button-contact">Contactez-moi</button>
-      <div class="photographer__infos" aria-label="photographer informations">
+      <div class="photographer__infos" aria-label="information du photographe">
         <h1 class="photographer__name">${photographer.name}</h1>
-        <h2 class="photographer__location" aria-label="photographer location">${
+        <h2 class="photographer__location" aria-label="localisation du photographe">${
           photographer.city + ', ' + photographer.country
         }</h2>
-        <p class="photographer__tagline" aria-label="photographer tagline">${photographer.tagline}</p>
-        <div class="photographer__tags" aria-label="photographer categories">
+        <p class="photographer__tagline" aria-label="Slogan du photographe">${photographer.tagline}</p>
+        <div class="photographer__tags" aria-label="Catégories du photographes">
           ${photographer.tags.map(tag => `<span class="photographer__tags__tag">#${tag}</span>`).join('')}
         </div>
       </div>

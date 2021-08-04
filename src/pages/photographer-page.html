@@ -26,60 +26,60 @@
       </a>
     </header>
 
-    <main>
-      <div id="modal-form" role="dialog" aria-label="contact photographer">
-        <div class="form-header" aria-label="form header"></div>
-        <form id="form" name="reserve" action="index.html" method="get" onsubmit="return validate(event)" novalidate>
-          <div class="formData" data-error="Vous devez entrer votre prénom." aria-label="firstname field">
-            <label for="firstname">Prénom</label><br />
-            <input
-              class="text-control"
-              type="text"
-              id="firstname"
-              name="firstname"
-              minlength="2"
-              required
-              aria-required="true"
-            /><br />
-          </div>
-          <div class="formData" data-error="Vous devez entrer votre nom." aria-label="name field">
-            <label for="lastname">Nom</label><br />
-            <input
-              class="text-control"
-              type="text"
-              id="lastname"
-              name="lastname"
-              minlength="2"
-              required
-              aria-required="true"
-            /><br />
-          </div>
-          <div class="formData" data-error="Vous devez entrer une adresse email valide." aria-label="email field">
-            <label for="email">E-mail</label><br />
-            <input class="text-control" type="email" id="email" name="email" required aria-required="true" /><br />
-          </div>
+    <div id="modal-form" role="dialog" aria-label="contactez le photographe" aria-hidden="true">
+      <div class="form-header"></div>
+      <form id="form" name="reserve" action="index.html" method="get" onsubmit="return validate(event)" novalidate>
+        <div class="formData" data-error="Vous devez entrer votre prénom.">
+          <label for="firstname">Prénom</label><br />
+          <input
+            class="text-control"
+            type="text"
+            id="firstname"
+            name="firstname"
+            minlength="2"
+            required
+            aria-required="true"
+          /><br />
+        </div>
+        <div class="formData" data-error="Vous devez entrer votre nom.">
+          <label for="lastname">Nom</label><br />
+          <input
+            class="text-control"
+            type="text"
+            id="lastname"
+            name="lastname"
+            minlength="2"
+            required
+            aria-required="true"
+          /><br />
+        </div>
+        <div class="formData" data-error="Vous devez entrer une adresse email valide.">
+          <label for="email">E-mail</label><br />
+          <input class="text-control" type="email" id="email" name="email" required aria-required="true" /><br />
+        </div>
 
-          <div class="formData" data-error="Vous devez écrire un message." aria-label="message field">
-            <label for="message">Votre message</label>
-            <textarea
-              class="text-control textarea"
-              rows="5"
-              cols="33"
-              id="message"
-              required
-              aria-required="true"
-            ></textarea
-            ><br />
-          </div>
+        <div class="formData" data-error="Vous devez écrire un message.">
+          <label for="message">Votre message</label>
+          <textarea
+            class="text-control textarea"
+            rows="5"
+            cols="33"
+            id="message"
+            required
+            aria-required="true"
+          ></textarea
+          ><br />
+        </div>
 
-          <br />
-          <input class="btn-submit" type="submit" value="Envoyer" />
-        </form>
-      </div>
+        <br />
+        <input class="btn-submit" type="submit" value="Envoyer" />
+      </form>
+    </div>
 
-      <header id="photographer" aria-label="photographer profile"></header>
+    <main id="main-content" aria-hidden="false">
+      <header id="photographer" aria-label="Profil du photographe"></header>
 
-      <div class="sum-price-likes" aria-label="information on the photographer's price and the number of likes">
+      <div class="sum-price-likes">
         <div class="total-likes" aria-label="display of the number of likes">
           <h2 class="total-likes__sum" aria-label="number of likes"></h2>
           <i class="fas fa-heart" aria-label="heart icon"></i>
@@ -87,7 +87,7 @@
         <h2 id="sum-price-likes__price" aria-label="display photographer price"></h2>
       </div>
 
-      <div class="dropdowns" aria-label="medias filter drop-down list">
+      <div class="dropdowns" aria-label="Trier l'affichage des médias">
         <p>Trier par</p>
         <form id="dropdowns__select">
           <div id="select-box" aria-label="medias filter list">
@@ -126,7 +126,9 @@
     </main>
 
     <script type="module" src="../js/photographerDetail.js"></script>
-    <!-- <script>
+    <!-- <script type="module" src="../js/checkValidityForm.js"></script> -->
+
+    <script>
       const modalForm = document.querySelector('#modal-form');
       let formularIsValid = false;
 
@@ -199,6 +201,6 @@
           console.log('Message : ' + messageInput.value);
         }
       }
-    </script> -->
+    </script>
   </body>
 </html>

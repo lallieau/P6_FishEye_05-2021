@@ -48,11 +48,13 @@ const PhotographersListTemplate = photographer =>
   `<article class="photographer" aria-label="A photographer's preview">
     <a href="./src/pages/photographer-page.html?id=${
       photographer.id
-    }&sortBy=${'popularity'}" aria-label="" class="photographer__link" aria-label="Link to the photographer's page">
+    }&sortBy=${'popularity'}" aria-label="voir la page du photographe ${
+    photographer.name
+  }" class="photographer__link" aria-label="Link to the photographer's page">
       <img class="photographer__link__portrait" src="./src/public/assets/Photographers/${
         photographer.portrait
-      }" alt="Photo portrait de ${photographer.name}" />
-      <h2 class="photographer__link__name" aria-label="Nom du photographe">${photographer.name}</h2>
+      }" alt="Photo portrait du photographe" />
+      <h2 class="photographer__link__name"  >${photographer.name}</h2>
     </a>
     <div class="photographer__details" aria-label="photographer information">
       <p class="photographer__details__location">${photographer.city + ', ' + photographer.country}</p>
