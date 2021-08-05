@@ -9,7 +9,7 @@ export function renderModal(photographerDetail) {
   const buttonContact = document.querySelector('.button-contact');
   const formHeader = document.querySelector('.form-header');
 
-  const mainContent = document.getElementById('main-content');
+  // const mainContent = document.getElementById('main-content');
 
   formHeader.innerHTML = photographerDetail.map(formTemplate).join('');
   const modalCloseBtn = document.querySelector('.close');
@@ -17,15 +17,13 @@ export function renderModal(photographerDetail) {
   const openModal = () => {
     modalForm.style.display = 'block';
 
-    mainContent.setAttribute('aria-hidden', 'true');
-    console.log(mainContent);
-    modalForm.setAttribute('aria-hidden', 'false');
-
-    console.log(modalForm);
+    // mainContent.setAttribute('aria-hidden', 'true');
+    // modalForm.setAttribute('aria-hidden', 'false');
   };
 
   const closeModal = () => {
     modalForm.style.display = 'none';
+    // buttonContact.focus();
   };
 
   modalCloseBtn.addEventListener('click', closeModal);

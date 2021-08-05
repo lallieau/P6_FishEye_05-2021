@@ -23,8 +23,8 @@ function getMediaInfo(media) {
 function createImage(media) {
   return `
     <article>
-      <div data-href="../public/assets/medias/${media.image}">
-        <img class="media__img" src="../public/assets/medias/${media.image}" alt="${media.title}" />
+      <div class="media" data-href="../public/assets/medias/${media.image}" tabindex="0">
+        <img class="media__img" src="../public/assets/medias/${media.image}" alt="${media.title}"/>
       </div>
       ${getMediaInfo(media)}
     </article>
@@ -33,9 +33,11 @@ function createImage(media) {
 
 function createVideo(media) {
   return `
-    <article>
-      <div data-href="../public/assets/medias/${media.video}" aria-label="video ${media.title}">
-        <video class="media__img" controls>
+    <article aria-label="Vidéo" tabindex="0">
+      <div class="media" data-href="../public/assets/medias/${media.video}" aria-label="video ${
+    media.title
+  }" tabindex="0">
+        <video class="media__img">
           <source src="../public/assets/medias/${media.video}" type="video/mp4">
         </video>
       </div>

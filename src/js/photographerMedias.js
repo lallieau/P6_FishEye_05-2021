@@ -6,6 +6,14 @@ export function renderMedias(filterUrl, media) {
   const option = document.querySelectorAll('.option input');
   const mediaElement = document.querySelector('#medias');
 
+  const dropdownButton = document.getElementById('options-view-button');
+  dropdownButton.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      console.log(dropdownButton);
+      dropdownButton.setAttribute('checked', 'true');
+    }
+  });
+
   const displayMedias = () => {
     if (sortBy === 'popularity') {
       const photographerMedias = media.filter(

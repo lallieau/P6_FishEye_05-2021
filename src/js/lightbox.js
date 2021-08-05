@@ -1,12 +1,10 @@
 export function renderLightbox() {
   const links = document.querySelectorAll('div[data-href$=".jpg"], div[data-href$=".mp4"]');
-
+  const mainContent = document.getElementById('main-content');
+  const headerContent = document.getElementById('header__title');
   const gallery = [];
   const mediaName = document.createElement('p');
   mediaName.classList.add('lightbox__container__media-name');
-
-  // const mainContent = document.getElementsByClassName('main-content');
-  // mainContent.attr('aria-hidden', 'true');
 
   const closeLightbox = () => {
     const lightbox = document.querySelector('.lightbox');
@@ -33,14 +31,23 @@ export function renderLightbox() {
   const generateImageTemplate = (url, container) => {
     const image = new Image();
     image.src = url;
+    // image.setAttribute('tabindex', '0');
     container.append(image);
   };
 
   const generateLightboxTemplate = () => {
-    // mainContent.innerHTML = "aria-hidden='true'";
-    // console.log(mainContent);
+    mainContent.setAttribute('aria-hidden', 'true');
+    // mainContent.setAttribute('tabindex', '-1');
+
+    headerContent.setAttribute('aria-hidden', 'true');
+    // headerContent.setAttribute('tabindex', '-1');
+
     const template = document.createElement('div');
     template.classList.add('lightbox');
+
+    template.setAttribute('aria-hidden', 'false');
+    // template.setAttribute('tabindex', '0');
+
     template.innerHTML = `<button class="lightbox__close">Fermer</button>
       <button class="lightbox__next">Suivant</button>
       <button class="lightbox__prev">Précédent</button>
@@ -51,6 +58,13 @@ export function renderLightbox() {
 
     const closeBtn = document.querySelector('.lightbox__close');
     closeBtn.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeLightbox();
+      }
+    });
   };
 
   const loadMedia = (url, index, container) => {
@@ -109,6 +123,16 @@ export function renderLightbox() {
 
       const container = document.querySelector('.lightbox__container');
       loadMedia(url, index, container);
+    });
+
+    link.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        generateLightboxTemplate();
+
+        const container = document.querySelector('.lightbox__container');
+        loadMedia(url, index, container);
+      }
     });
   });
 }
