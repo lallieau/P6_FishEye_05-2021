@@ -37,16 +37,16 @@ export function renderLightbox() {
 
   const generateLightboxTemplate = () => {
     mainContent.setAttribute('aria-hidden', 'true');
-    // mainContent.setAttribute('tabindex', '-1');
+    mainContent.setAttribute('tabindex', '-1');
 
     headerContent.setAttribute('aria-hidden', 'true');
-    // headerContent.setAttribute('tabindex', '-1');
+    headerContent.setAttribute('tabindex', '-1');
 
     const template = document.createElement('div');
     template.classList.add('lightbox');
 
     template.setAttribute('aria-hidden', 'false');
-    // template.setAttribute('tabindex', '0');
+    template.setAttribute('tabindex', '0');
 
     template.innerHTML = `<button class="lightbox__close">Fermer</button>
       <button class="lightbox__next">Suivant</button>
@@ -56,6 +56,7 @@ export function renderLightbox() {
 
     document.querySelector('body').append(template);
 
+    template.focus();
     const closeBtn = document.querySelector('.lightbox__close');
     closeBtn.addEventListener('click', closeLightbox);
 
@@ -108,6 +109,18 @@ export function renderLightbox() {
 
     const prevButton = document.querySelector('.lightbox__prev');
     prevButton.addEventListener('click', prevImage);
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        nextImage(event);
+      }
+
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        prevImage(event);
+      }
+    });
   };
 
   links.forEach(link => {

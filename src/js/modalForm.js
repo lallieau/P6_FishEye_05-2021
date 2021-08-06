@@ -9,7 +9,8 @@ export function renderModal(photographerDetail) {
   const buttonContact = document.querySelector('.button-contact');
   const formHeader = document.querySelector('.form-header');
 
-  // const mainContent = document.getElementById('main-content');
+  const mainContent = document.getElementById('main-content');
+  const headerContent = document.getElementById('header__title');
 
   formHeader.innerHTML = photographerDetail.map(formTemplate).join('');
   const modalCloseBtn = document.querySelector('.close');
@@ -23,8 +24,16 @@ export function renderModal(photographerDetail) {
         closeModal();
       }
     });
-    // mainContent.setAttribute('aria-hidden', 'true');
-    // modalForm.setAttribute('aria-hidden', 'false');
+
+    modalForm.setAttribute('aria-hidden', 'false');
+
+    mainContent.setAttribute('aria-hidden', 'true');
+    mainContent.setAttribute('tabindex', '-1');
+
+    headerContent.setAttribute('aria-hidden', 'true');
+    headerContent.setAttribute('tabindex', '-1');
+
+    modalCloseBtn.focus();
   };
 
   const closeModal = () => {

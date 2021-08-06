@@ -31,11 +31,6 @@
   margin-bottom: 5px;
 }
 
-.media:focus {
-  filter: drop-shadow(0 0 0.75rem var(--third-text-color));
-  outline: none;
-}
-
 .button-contact {
   position: fixed;
   bottom: 30px;

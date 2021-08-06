@@ -7,10 +7,9 @@ export function renderMedias(filterUrl, media) {
   const mediaElement = document.querySelector('#medias');
 
   const dropdownButton = document.getElementById('options-view-button');
-  dropdownButton.addEventListener('keydown', event => {
-    if (event.key === 'Enter') {
-      dropdownButton.setAttribute('checked', 'true');
-    }
+
+  dropdownButton.addEventListener('focus', () => {
+    dropdownButton.setAttribute('checked', 'true');
   });
 
   const displayMedias = () => {

@@ -2,7 +2,6 @@ import { renderModal } from './modalForm.js';
 import { renderMedias } from './photographerMedias.js';
 import { renderSumLikes } from './increaseLikes.js';
 import { renderLightbox } from './lightbox.js';
-import { checkValidityForm } from './checkValidityForm.js';
 
 fetch('../data.json')
   .then(response => {
@@ -28,7 +27,6 @@ function renderPhotographer({ photographers, media }) {
   renderModal(photographerDetail);
   renderSumLikes();
   renderLightbox();
-  // checkValidityForm();
 }
 
 const PhotographerDetailTemplate = photographer =>
