@@ -9,7 +9,6 @@ export function renderMedias(filterUrl, media) {
   const dropdownButton = document.getElementById('options-view-button');
   dropdownButton.addEventListener('keydown', event => {
     if (event.key === 'Enter') {
-      console.log(dropdownButton);
       dropdownButton.setAttribute('checked', 'true');
     }
   });

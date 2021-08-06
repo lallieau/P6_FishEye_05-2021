@@ -33,7 +33,7 @@ function createImage(media) {
 
 function createVideo(media) {
   return `
-    <article aria-label="Vidéo" tabindex="0">
+    <article>
       <div class="media" data-href="../public/assets/medias/${media.video}" aria-label="video ${
     media.title
   }" tabindex="0">
