@@ -6,22 +6,26 @@ export function renderMedias(filterUrl, media) {
   const option = document.querySelectorAll('.option input');
   const mediaElement = document.querySelector('#medias');
 
-  const dropdownButton = document.getElementById('options-view-button');
-  const selectOption = document.querySelector('.select-option[checked]');
+  // const dropdownButton = document.getElementById('options-view-button');
+  // const selectOption = document.querySelector('.select-option[checked="true"]');
 
-  dropdownButton.addEventListener('keydown', event => {
-    if (event.key === 'Enter') {
-      dropdownButton.setAttribute('checked', true);
-    }
-  });
+  // console.log(selectOption);
 
-  selectOption.addEventListener('focus', () => {
-    dropdownButton.setAttribute('checked', true);
-  });
+  // dropdownButton.addEventListener('keydown', event => {
+  //   if (event.key === 'Enter') {
+  //     dropdownButton.setAttribute('checked', true);
+  //   }
+  // });
 
-  selectOption.addEventListener('blur', () => {
-    dropdownButton.removeAttribute('checked');
-  });
+  // selectOption.addEventListener('blur', () => {
+  //   console.log(selectOption);
+  //   dropdownButton.removeAttribute('checked');
+  // });
+
+  // selectOption.addEventListener('focus', () => {
+  //   console.log(selectOption);
+  //   dropdownButton.setAttribute('checked', true);
+  // });
 
   const displayMedias = () => {
     if (sortBy === 'popularity') {
@@ -60,14 +64,35 @@ export function renderMedias(filterUrl, media) {
         .map(mediaFactory)
         .join('');
     }
+
+    const selectOption = document.querySelector('.select-option[checked="true"]');
+    const dropdownButton = document.getElementById('options-view-button');
+
+    dropdownButton.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        dropdownButton.setAttribute('checked', true);
+      }
+    });
+
+    selectOption.addEventListener('blur', () => {
+      dropdownButton.removeAttribute('checked');
+    });
+
+    selectOption.addEventListener('focus', () => {
+      dropdownButton.setAttribute('checked', true);
+    });
   };
 
   option.forEach(input => {
     const newSortBy = input.value;
+
     if (newSortBy === sortBy) {
       input.setAttribute('checked', true);
       displayMedias();
+    } else {
+      input.removeAttribute('checked');
     }
+
     input.addEventListener('change', () => {
       filterUrl.set('sortBy', newSortBy);
       window.location.search = filterUrl;
