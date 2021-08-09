@@ -7,9 +7,20 @@ export function renderMedias(filterUrl, media) {
   const mediaElement = document.querySelector('#medias');
 
   const dropdownButton = document.getElementById('options-view-button');
+  const selectOption = document.querySelector('.select-option[checked]');
 
-  dropdownButton.addEventListener('focus', () => {
-    dropdownButton.setAttribute('checked', 'true');
+  dropdownButton.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      dropdownButton.setAttribute('checked', true);
+    }
+  });
+
+  selectOption.addEventListener('focus', () => {
+    dropdownButton.setAttribute('checked', true);
+  });
+
+  selectOption.addEventListener('blur', () => {
+    dropdownButton.removeAttribute('checked');
   });
 
   const displayMedias = () => {
@@ -38,15 +49,17 @@ export function renderMedias(filterUrl, media) {
         .map(mediaFactory)
         .join('');
     }
+    if (sortBy === 'title') {
+      const photographerMedias = media.filter(
+        photographerMedias => photographerMedias.photographerId === parseInt(urlId),
+        photographerMedias => photographerMedias.title,
+      );
 
-    const photographerMedias = media.filter(
-      photographerMedias => photographerMedias.photographerId === parseInt(urlId),
-      photographerMedias => photographerMedias.title,
-    );
-    mediaElement.innerHTML = photographerMedias
-      .sort((a, b) => a.title.toLowerCase().localeCompare(b.title))
-      .map(mediaFactory)
-      .join('');
+      mediaElement.innerHTML = photographerMedias
+        .sort((a, b) => a.title.toLowerCase().localeCompare(b.title))
+        .map(mediaFactory)
+        .join('');
+    }
   };
 
   option.forEach(input => {
