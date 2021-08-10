@@ -11,6 +11,10 @@
   text-decoration: none;
   text-align: center;
   padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .photographer__link__name {
   font-size: var(--title);

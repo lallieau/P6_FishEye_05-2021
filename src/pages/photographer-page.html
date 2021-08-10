@@ -14,10 +14,9 @@
   </head>
 
   <body>
-    <header id="header__title" role="banner" aria-hidden="false">
+    <header id="header__title" aria-hidden="false">
       <a href="../../index.html">
         <img
-          role="img"
           aria-label="logo Fisheye, retour à la page d'accueil  "
           class="header__title__logo"
           src="../public/assets/logo.png"
@@ -80,17 +79,17 @@
       <header id="photographer" aria-label="Profil du photographe"></header>
 
       <div class="sum-price-likes">
-        <div class="total-likes" aria-label="display of the number of likes">
-          <h2 class="total-likes__sum" aria-label="number of likes"></h2>
-          <i class="fas fa-heart" aria-label="heart icon"></i>
+        <div class="total-likes">
+          <h2 class="total-likes__sum"></h2>
+          <i class="fas fa-heart"></i>
         </div>
-        <h2 id="sum-price-likes__price" aria-label="display photographer price"></h2>
+        <h2 id="sum-price-likes__price"></h2>
       </div>
 
-      <div class="dropdowns" aria-label="Trier l'affichage des médias">
+      <div class="dropdowns">
         <p>Trier par</p>
         <form id="dropdowns__select">
-          <div id="select-box" aria-label="medias filter list">
+          <div id="select-box">
             <input type="checkbox" id="options-view-button" aria-label="Trier l'affichage des médias" />
             <div id="select-button">
               <div id="chevrons">
@@ -106,7 +105,7 @@
                   name="platform"
                   value="popularity"
                   aria-label="trier par popularité"
-                  checked="true"
+                  checked
                   tabindex="0"
                 />
                 <span class="label">Popularité</span>
